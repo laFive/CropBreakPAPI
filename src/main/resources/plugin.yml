@@ -1,0 +1,7 @@
+name: CropBreakPAPI
+author: [laFive]
+api-version: 1.13
+softdepend: [PlaceHolderAPI]
+version: 1.0
+main: me.lafive.cropbreak.CropBreakPAPI
+commands:
