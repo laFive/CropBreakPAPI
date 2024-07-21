@@ -20,7 +20,7 @@ public class EventListener implements Listener {
     @EventHandler(priority=EventPriority.LOWEST)
     public void handleBlockBreakEvent(BlockBreakEvent e) {
         if (e.isCancelled()) return;
-        if (e.getBlock().getType().equals(Material.WHEAT)) {
+        if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
             /*
              * We can make this cast safely without checking instanceof
              * as Material.WHEAT blockdata will always be instanceof
