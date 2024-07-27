@@ -17,7 +17,7 @@ public class EventListener implements Listener {
         this.instance = instance;
     }
 
-    @EventHandler(priority=EventPriority.LOWEST)
+    @EventHandler(priority=EventPriority.LOW)
     public void handleBlockBreakEvent(BlockBreakEvent e) {
         if (e.isCancelled()) return;
         if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
