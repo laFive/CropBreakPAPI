@@ -20,7 +20,7 @@ public class EventListener implements Listener {
     @EventHandler(priority=EventPriority.LOW)
     public void handleBlockBreakEvent(BlockBreakEvent e) {
         if (e.isCancelled()) return;
-        if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
+        if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.BEETROOT_SEEDS) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
             /*
              * We can make this cast safely without checking instanceof
              * as Material.WHEAT blockdata will always be instanceof
@@ -33,6 +33,14 @@ public class EventListener implements Listener {
                         instance.getDataFile().getPlayerData(e.getPlayer()) + 1);
             }
         }
+
+        if (e.getBlock().getType().equals(Material.MELON)) {
+
+            instance.getDataFile().setPlayerData(e.getPlayer().getUniqueId(),
+                    instance.getDataFile().getPlayerData(e.getPlayer()) + 1);
+
+        }
+
     }
 
 }
