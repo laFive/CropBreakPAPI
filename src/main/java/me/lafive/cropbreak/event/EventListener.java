@@ -17,10 +17,10 @@ public class EventListener implements Listener {
         this.instance = instance;
     }
 
-    @EventHandler(priority=EventPriority.LOW)
+    @EventHandler(priority=EventPriority.HIGH)
     public void handleBlockBreakEvent(BlockBreakEvent e) {
         if (e.isCancelled()) return;
-        if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.BEETROOT_SEEDS) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
+        if (e.getBlock().getType().equals(Material.WHEAT) || e.getBlock().getType().equals(Material.NETHER_WART) || e.getBlock().getType().equals(Material.BEETROOTS) || e.getBlock().getType().equals(Material.CARROTS) || e.getBlock().getType().equals(Material.POTATOES)) {
             /*
              * We can make this cast safely without checking instanceof
              * as Material.WHEAT blockdata will always be instanceof
@@ -34,7 +34,7 @@ public class EventListener implements Listener {
             }
         }
 
-        if (e.getBlock().getType().equals(Material.MELON)) {
+        if (e.getBlock().getType().equals(Material.MELON) || e.getBlock().getType().equals(Material.CACTUS) || e.getBlock().getType().equals(Material.PUMPKIN) || e.getBlock().getType().equals(Material.SUGAR_CANE)) {
 
             instance.getDataFile().setPlayerData(e.getPlayer().getUniqueId(),
                     instance.getDataFile().getPlayerData(e.getPlayer()) + 1);
